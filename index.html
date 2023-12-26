@@ -1,144 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Reality Landing Page Reveal Animation</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="container"></div>
-    <div class="pre-loader">
-        <div class="loader"></div>
-        <div class="loader-bg"></div>
+    <div class="container">
+      <div class="pre-loader">
+          <div class="loader"></div>
+          <div class="loader-bg"></div>
+      </div>
+      <div class="loader-content">
+          <div class="count"><p>0</p></div>
+          <div class="copy"><p class="ml16">New Reality</p></div>
+        </div>
+      <div class="loader-2"></div>
     </div>
-        <div class="loader-content">
-            <div class="count"><p>0</p></div>
-            <div class="copy"><p class="ml16">New Reality</p></div>
-        </div>
-            <div class="loader-2"></div>
-        <div class="site-content">
-            <nav>
-                <div class="logo">
-                    <a href="#">New Reality</a>
-                </div>
-                <div class="links">
-                   <a href="#">Info</a>
-                   <a href="#">Portfolio</a>
-                   <a href="#">Contact</a>
-                </div>
-            </nav>
-            <div class="header">
-                <h1>N</h1>
-                <h1>E</h1>
-                <h1>W</h1>
-                <h1>R</h1>
-                <h1>E</h1>
-                <h1>A</h1>
-                <h1>L</h1>
-                <h1>I</h1>
-                <h1>T</h1>
-                <h1>Y</h1>
+
+    <div class="site-content">
+        <nav>
+            <div class="logo">
+                <a href="#">New Reality</a>
             </div>
-
-            <footer>
-                <div class="footer-copy">
-                    <p>
-                        New Reality is a design studio based in Tokyo, Japan. We work with many companies to build and proactively deliver engaging brand experiences. We are unique in our ability to take a strategic approach while being visually driven.
-                    </p>
-                </div>
-
-                <div class="footer-nav">
-                    <div class="im"></div>
-                    <div class="im"></div>
-                </div>
-            </footer>
+            <div class="links">
+                <a href="#">Info</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+        <div class="header">
+            <h1>N</h1>
+            <h1>E</h1>
+            <h1>W</h1>
+            <h1>R</h1>
+            <h1>E</h1>
+            <h1>A</h1>
+            <h1>L</h1>
+            <h1>I</h1>
+            <h1>T</h1>
+            <h1>Y</h1>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+        <footer>
+            <div class="footer-copy">
+                <p>
+                    New Reality is a design studio based in Tokyo, Japan. We work with
+                    many companies to build and proactively deliver engaging brand
+                    experiences. We are unique in our ability to take a strategic
+                    approach while being visually driven.
+                </p>
+            </div>
+            <div class="footer-nav">
+                <div class="img"></div>
+                <div class="img"></div>
+            </div>
+        </footer>
+      </div>
 
 
-        <script>
-            function startLoader() {
+    
 
-                // Select Elements
-                let counterElement = document.querySelector('.count p');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 
-                // Initialize Value
-                let currentValue = 0;
+    <script>
+        function startLoader() {
+            // Select Elements
+            let counterElement = document.querySelector(".count p");
 
-                // Update Counter
-                // Generate increment randomly based on number between 1 & 10
-                // Update counter value
-                // Set Counter Element to the updated currentValue variable
+            // Initialize Value
+            let currentValue = 0;
 
-                function updateCounter() {
-                    if (currentValue < 100) {
-                        let increment = Math.floor(Math.random() * 10) + 1;
-                        currentValue = Math.min(currentValue + increment, 100);
-                        counterElement.textContent = currentValue;
+            // Update Counter
+            // Generate increment randomly based on number between 1 & 10
+            // Update counter value
+            // Set Counter Element to the updated currentValue variable
 
-                        // delay fade out by 3.5 seconds
-                        let delay = Math.floor(Math.random() * 200) + 25;
-                        setTimeout(updateCounter, delay);
-                    }
+            function updateCounter() {
+                if (currentValue < 100) {
+                    let increment = Math.floor(Math.random() * 10) + 1;
+                    currentValue = Math.min(currentValue + increment, 100);
+                    counterElement.textContent = currentValue;
+
+                    // delay fade out by 3.5 seconds
+                    let delay = Math.floor(Math.random() * 200) + 25;
+                    setTimeout(updateCounter, delay);
                 }
-
-                updateCounter();
-
             }
 
-            // initialize preloader
-            startLoader();
-            gsap.to(".count", { opacity: 0, delay: 3.5, duration: 1, ease: "power2.inOut" });
+            updateCounter();
+        }
 
-            // Set individual letters animation
-            let textWrapper = document.querySelector(".ml16");
-            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        // initialize preloader
+        startLoader();
+        gsap.to(".count", {
+            opacity: 0,
+            delay: 3.5,
+            duration: 1,
+            ease: "power2.inOut",
+        });
 
+        // Set individual letters animation
+        let textWrapper = document.querySelector(".ml16");
+        textWrapper.innerHTML = textWrapper.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+        );
 
-            anime.timeline({ loop: false })
-                .add({
-                    targets: '.ml16 .letter',
-                    translateY: [-100, 0],
-                    easing: "easeOutExpo",
-                    duration: 1400,
-                    delay: (el, i) => 30 * i
-                }).add({
-                    targets: '.ml16',
-                    opacity: 1,
-                    duration: 1000,
-                    easing: "easeOutExpo",
-                    delay: 1000
-                });
+        // gsap animation timeline
 
-            gsap.to(".pre-loader", {
-                scale: 0.5,
-                ease: "power4.inOut",
-                duration: 2,
-                delay: 5,
+        anime
+            .timeline({ loop: false })
+            .add({
+                targets: ".ml16 .letter",
+                translateY: [-100, 0],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 30 * i,
             })
+            .add({
+                targets: ".ml16 .letter",
+                opacity: 1,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: (el, i) => 2000 + 30 * i
+            });
 
-            gsap.to(".loader", {
-                height: "0",
-                ease: "power4.inOut",
-                duration: 1.5,
-                delay: 3.75
-            })
+        // preloader tween animations
 
-            gsap.to(".loader-bg", {
-                height: "0",
-                ease: "power4.inOut",
-                duration: 1.5,
-                delay: 4
-            })
+        gsap.to(".pre-loader", {
+            scale: 0.5,
+            ease: "power4.inOut",
+            duration: 2,
+            delay: 5,
+        });
 
-            
+        gsap.to(".loader", {
+            height: "0",
+            ease: "power4.inOut",
+            duration: 1.5,
+            delay: 3.75,
+        });
 
-        </script>
+        gsap.to(".loader-bg", {
+            height: "0",
+            ease: "power4.inOut",
+            duration: 1.5,
+            delay: 4,
+        });
+
+        gsap.to(".loader-2", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            ease: "power4.inOut",
+            duration: 1.5,
+            delay: 3.5,
+        });
+
+        gsap.from(".header h1", {
+            y: 200,
+            ease: "power4.inOut",
+            duration: 1.5,
+            delay: 3.75,
+            stagger: 0.05,
+        });
+
+        gsap.to(".img", {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            ease: "power4.inOut",
+            duration: 1.5,
+            delay: 4.5,
+            stagger: 0.05,
+        });
 
 
-
- 
+    </script>
+    
 </body>
 </html>
