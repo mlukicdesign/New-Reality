@@ -19,8 +19,7 @@
 }
 
 html, body {
-    width: 100vh;
-    height: 100vh;
+    width: 100vw;
     font-family: "Neue Montreal";
 }
 
@@ -97,13 +96,14 @@ html, body {
     height: 100%;
     background: url(./images/hero.jpg) no-repeat 50% 50%;
     background-size: cover;
-    z-index: -99;
+    z-index: -1;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .site-content {
     position: relative;
     z-index: -2;
+    width: 100%;
 }
 
 nav {
@@ -114,6 +114,7 @@ nav {
 
 a {
    text-decoration: none;
+   font-size: 20px;
    color: #000; 
 }
 
@@ -171,7 +172,8 @@ footer > div {
 .img {
     width: 225px;
     height: 150px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0 100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 
@@ -185,6 +187,14 @@ footer > div {
      background: url(./images/abstractala.jpg) no-repeat 50% 50%;
      background-size: cover;
 }
+
+  
+.img:hover {
+    transform: scale(1.2);
+}
+
+
+
 
 @media(max-width: 900px) {
     footer {
